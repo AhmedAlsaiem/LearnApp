@@ -7,8 +7,8 @@ import 'package:i_learn/features/authantication/presentation/view/widget/custom_
 import 'package:i_learn/features/authantication/presentation/view/widget/navigation_from_authatication_signin_signup.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-class CustomSignUpWidget extends StatelessWidget {
-  const CustomSignUpWidget({
+class CustomSignUpSection extends StatelessWidget {
+  const CustomSignUpSection({
     super.key,
     required this.formKey,
   });

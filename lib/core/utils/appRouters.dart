@@ -31,7 +31,7 @@ abstract class AppRouter {
       GoRoute(
         path: '/frogotPasswordView',
         builder: (BuildContext context, GoRouterState state) =>
-            const ForgotPasswordView(),
+            ForgotPasswordView(),
       ),
       GoRoute(
         path: '/signUpView',

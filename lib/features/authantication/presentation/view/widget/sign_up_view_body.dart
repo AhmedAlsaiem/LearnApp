@@ -18,7 +18,7 @@ class SignUpViewBody extends StatelessWidget {
             LogoAndTextSection(
               label: 'Regisster to your acount',
             ),
-            CustomSignUpWidget(formKey: formKey)
+            CustomSignUpSection(formKey: formKey)
           ],
         ),
       ),

@@ -22,7 +22,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: widget.onchange,
-      obscureText: widget.label == 'Password' ? visible : false,
+      obscureText:
+          obscureTextMethod(), // widget.label == 'Password' ? visible : false,
       decoration: InputDecoration(
         filled: true,
         fillColor: ColorsManger.kGreyColor.withOpacity(0.1),
@@ -35,21 +36,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           fontSize: 18,
         ),
         suffixIconColor: Colors.black,
-        suffixIcon: widget.label == 'Password'
-            ? IconButton(
-                onPressed: () {
-                  if (visible == true) {
-                    visible = false;
-                    setState(() {});
-                  } else {
-                    visible = true;
-                    setState(() {});
-                  }
-                },
-                icon: Icon(
-                    visible == true ? Icons.visibility : Icons.visibility_off),
-              )
-            : null,
+        suffixIcon: suffixIconMethod(),
         prefixIcon: widget.icon,
         border: CustomOutlineInputBorder(color: ColorsManger.kGreyColor),
         errorBorder:
@@ -76,8 +63,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         } else {
           return null;
         }
-      } else if (value.length <= 6 && widget.label == 'Password') {
-        return 'this Password is short';
+      } else if (value.length <= 6 &&
+          (widget.label == 'Password' || widget.label == 'New password')) {
+        return 'this Password is very short';
       } else if ({widget.label} == 'Email' && value.length <= 10) {
         return 'this ${widget.label} is not correct';
       } else {
@@ -93,5 +81,32 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       ),
       borderRadius: BorderRadius.circular(12),
     );
+  }
+
+  bool obscureTextMethod() {
+    if (widget.label == 'Password' || widget.label == 'New password') {
+      return visible;
+    } else {
+      return false;
+    }
+  }
+
+  Widget? suffixIconMethod() {
+    if (widget.label == 'Password' || widget.label == 'New password') {
+      return IconButton(
+        onPressed: () {
+          if (visible == true) {
+            visible = false;
+            setState(() {});
+          } else {
+            visible = true;
+            setState(() {});
+          }
+        },
+        icon: Icon(visible == true ? Icons.visibility : Icons.visibility_off),
+      );
+    } else {
+      return null;
+    }
   }
 }

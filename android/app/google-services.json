@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "184842207815",
+    "project_id": "learn-app-4676e",
+    "storage_bucket": "learn-app-4676e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184842207815:android:6fd757772e9ea30fa6a762",
+        "android_client_info": {
+          "package_name": "com.example.i_learn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeAbqR6hTUpK3pUpUT4l7KyGi8nL8KOUQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
