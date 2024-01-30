@@ -4,6 +4,7 @@ import 'package:i_learn/core/utils/appRouters.dart';
 import 'package:i_learn/core/utils/constants.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/custom_botton.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/custom_text_form_field.dart';
+import 'package:i_learn/features/authantication/presentation/view/widget/navigation_from_authatication_signin_signup.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/sigin_Options.dart';
 
 class EmailPasswordSection extends StatelessWidget {
@@ -58,22 +59,12 @@ class EmailPasswordSection extends StatelessWidget {
                 height: PaddingManger.defultPadding,
               ),
               SiginOptions(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("You don't have an Acount "),
-                  TextButton(
-                    onPressed: () {
-                      GoRouter.of(context).push(AppRouter.kSignUpView);
-                    },
-                    child: Text(
-                      'Sign Up',
-                      style: TextStyle(
-                        color: ColorsManger.kPrimaryColor,
-                      ),
-                    ),
-                  ),
-                ],
+              NavigationFromAuthaticitonSignInSignUp(
+                label1: "You don't have an Acount ",
+                label2: 'Sign Up',
+                ontap: () {
+                  GoRouter.of(context).push(AppRouter.kSignUpView);
+                },
               )
             ],
           ),

@@ -6,8 +6,9 @@ import 'package:i_learn/features/authantication/presentation/view/widget/custom_
 class LogoAndTextSection extends StatelessWidget {
   const LogoAndTextSection({
     super.key,
+    required this.label,
   });
-
+  final String label;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -19,7 +20,7 @@ class LogoAndTextSection extends StatelessWidget {
           style: TextStyleManger.textStyleAleoRegular24,
         ),
         Text(
-          'Login to your acount',
+          label,
           style: TextStyleManger.textStyleAleoRegular16.copyWith(
             fontSize: 22,
             color: ColorsManger.kScendryColor.withOpacity(0.5),

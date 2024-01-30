@@ -15,7 +15,7 @@ class LoginViewBoody extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            LogoAndTextSection(),
+            LogoAndTextSection(label: 'Login to your acount',),
             EmailPasswordSection(formKey: formKey),
           ],
         ),
