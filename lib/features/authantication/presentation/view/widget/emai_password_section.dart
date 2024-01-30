@@ -3,8 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:i_learn/core/utils/appRouters.dart';
 import 'package:i_learn/core/utils/constants.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/custom_botton.dart';
-import 'package:i_learn/features/authantication/presentation/view/widget/custom_botton_login_options.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/custom_text_form_field.dart';
+import 'package:i_learn/features/authantication/presentation/view/widget/sigin_Options.dart';
 
 class EmailPasswordSection extends StatelessWidget {
   const EmailPasswordSection({
@@ -58,26 +58,7 @@ class EmailPasswordSection extends StatelessWidget {
               SizedBox(
                 height: PaddingManger.defultPadding,
               ),
-              Row(
-                children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.08,
-                  ),
-                  CustomBottonLoginOptions(
-                    color: ColorsManger.kPrimaryColor,
-                    label: 'Facebook',
-                    iamge: AssetsManger.facbookIamge,
-                  ),
-                  CustomBottonLoginOptions(
-                    color: ColorsManger.kWhiteColor,
-                    label: 'Google',
-                    iamge: AssetsManger.googleImge,
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.08,
-                  ),
-                ],
-              )
+              SiginOptions()
             ],
           ),
         ),
