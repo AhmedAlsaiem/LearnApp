@@ -38,8 +38,7 @@ class EmailPasswordSection extends StatelessWidget {
                 children: [
                   TextButton(
                     onPressed: () {
-                      GoRouter.of(context)
-                          .push(AppRouter.forgotPasswordView);
+                      GoRouter.of(context).push(AppRouter.forgotPasswordView);
                     },
                     child: Text(
                       'forgot password?',
@@ -58,7 +57,24 @@ class EmailPasswordSection extends StatelessWidget {
               SizedBox(
                 height: PaddingManger.defultPadding,
               ),
-              SiginOptions()
+              SiginOptions(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("You don't have an Acount "),
+                  TextButton(
+                    onPressed: () {
+                      GoRouter.of(context).push(AppRouter.kSignUpView);
+                    },
+                    child: Text(
+                      'Sign Up',
+                      style: TextStyle(
+                        color: ColorsManger.kPrimaryColor,
+                      ),
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
         ),
