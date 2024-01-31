@@ -1,13 +1,15 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:i_learn/core/utils/appRouters.dart';
 import 'package:i_learn/core/utils/constants.dart';
 import 'package:i_learn/firebase_options.dart';
 
+import 'features/authantication/presentation/manager/cubits/sign_in_cubit/sign_in_cubit.dart';
+import 'features/authantication/presentation/manager/cubits/sign_up_cubit/sign_up_cubit.dart';
 
-
-void main()async {
- WidgetsFlutterBinding.ensureInitialized();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -19,12 +21,19 @@ class Learn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      theme: ThemeData(
-        scaffoldBackgroundColor: ColorsManger.kWhiteColor,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: ((context) => SignIncubit())),
+                BlocProvider(create: ((context) => SignUpcubit())),
+
+      ],
+      child: MaterialApp.router(
+        theme: ThemeData(
+          scaffoldBackgroundColor: ColorsManger.kWhiteColor,
+        ),
+        routerConfig: AppRouter.router,
+        debugShowCheckedModeBanner: false,
       ),
-      routerConfig: AppRouter.router,
-      debugShowCheckedModeBanner: false,
     );
   }
 }

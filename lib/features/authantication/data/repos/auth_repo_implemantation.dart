@@ -15,7 +15,7 @@ class AuthRepoImplemantation implements AuthRepo {
   }
 
   @override
-  Future<String?> signInEmailPassword(
+  Future<String> signInEmailPassword(
       {required String email, required String password}) async {
     try {
       if (auth.currentUser != null) {

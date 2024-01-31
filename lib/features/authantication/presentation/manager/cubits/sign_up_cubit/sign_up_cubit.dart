@@ -3,9 +3,9 @@ import 'package:i_learn/features/authantication/data/repos/auth_repo_implemantat
 import 'package:i_learn/features/authantication/presentation/manager/cubits/sign_up_cubit/sign_up_cubit_state.dart';
 
 class SignUpcubit extends Cubit<SignUpCubitState> {
-  SignUpcubit(super.initialState);
+  SignUpcubit() : super(SignUpCubitState());
   AuthRepoImplemantation authRepoImp = AuthRepoImplemantation();
-  void SignUpWithEmailAndPassword({required email, required password}) async {
+  void signUpWithEmailAndPassword({required email, required password}) async {
     emit(SignUpIsLoadingCubitStatec());
     var result =
         await authRepoImp.signUpEmailPassword(email: email, password: password);
