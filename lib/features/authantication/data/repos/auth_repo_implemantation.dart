@@ -24,7 +24,7 @@ class AuthRepoImplemantation implements AuthRepo {
             email: email,
             password: password,
           );
-          return null;
+          return 'sucess';
         } else {
           return 'Email is not verified';
         }
@@ -50,7 +50,7 @@ class AuthRepoImplemantation implements AuthRepo {
       await auth.createUserWithEmailAndPassword(
           email: email, password: password);
       await auth.currentUser!.sendEmailVerification();
-      return 'sucess,';
+      return 'sucess';
     } on FirebaseAuthException catch (e) {
       return await AuthFailure.fromAuthException(e).errorMessage;
     } catch (e) {
