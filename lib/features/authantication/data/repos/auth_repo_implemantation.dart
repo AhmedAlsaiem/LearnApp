@@ -50,7 +50,7 @@ class AuthRepoImplemantation implements AuthRepo {
       await auth.createUserWithEmailAndPassword(
           email: email, password: password);
       await auth.currentUser!.sendEmailVerification();
-      return 'sucess';
+      return 'success';
     } on FirebaseAuthException catch (e) {
       return await AuthFailure.fromAuthException(e).errorMessage;
     } catch (e) {

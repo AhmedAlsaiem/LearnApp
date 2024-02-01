@@ -10,7 +10,7 @@ class SignUpcubit extends Cubit<SignUpCubitState> {
     var result =
         await authRepoImp.signUpEmailPassword(email: email, password: password);
     if (result == 'success') {
-      emit(SignUpSucessCubitState());
+      emit(SignUpSucessCubitState(sucessMessage: 'Please verify your Email'));
     } else {
       emit(SignUpFailedCubitState(errorMessage: result));
     }

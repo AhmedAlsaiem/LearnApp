@@ -43,7 +43,7 @@ class AuthFailure extends Failure {
             errorMessage: "Server error, please try again later.");
 
       default:
-        return AuthFailure(errorMessage: "Login failed. Please try again.");
+        return AuthFailure(errorMessage: "Auth failed. Please try again.");
     }
   }
 }
