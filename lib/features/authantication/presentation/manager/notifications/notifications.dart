@@ -4,7 +4,7 @@ class Noti {
   static Future<void> notiInitialize(
       FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin) async {
     var androidInitialsize =
-        const AndroidInitializationSettings('assets/images/logo.png');
+        const AndroidInitializationSettings('mipmap/launcher_icon');
     var iosInitialsize = const DarwinInitializationSettings();
     var initializationSettings = InitializationSettings(
         android: androidInitialsize, iOS: iosInitialsize);

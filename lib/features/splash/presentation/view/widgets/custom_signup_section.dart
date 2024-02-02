@@ -54,7 +54,6 @@ class CustomSignUpSection extends StatelessWidget {
                   BlocProvider.of<SignUpcubit>(context)
                       .signUpWithEmailAndPassword(
                           email: email, password: password);
-                  print('${password} + $email Ahmed');
                 }
 
               
