@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:go_router/go_router.dart';
 import 'package:i_learn/core/utils/appRouters.dart';
 import 'package:i_learn/features/authantication/presentation/manager/cubits/sign_in_cubit/sign_in_cubit.dart';
 import 'package:i_learn/features/authantication/presentation/manager/cubits/sign_in_cubit/sign_in_cubit_state.dart';
+import 'package:i_learn/features/authantication/presentation/manager/notifications/notifications.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/emai_password_section.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/handel_state_widget.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/logo_and_text_section.dart';
@@ -16,11 +18,20 @@ class LoginViewBoody extends StatefulWidget {
   @override
   State<LoginViewBoody> createState() => _LoginViewBoodyState();
 }
+
 class _LoginViewBoodyState extends State<LoginViewBoody> {
   final GlobalKey<FormState> formKey = GlobalKey();
   int value = 4;
   String title = '';
   String subTitle = '';
+  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+      FlutterLocalNotificationsPlugin();
+  @override
+  void initState() {
+    Noti.notiInitialize(flutterLocalNotificationsPlugin);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocListener<SignInCubit, SignInCubitState>(
@@ -65,6 +76,10 @@ class _LoginViewBoodyState extends State<LoginViewBoody> {
     } else if (state is SignInSucessCubitState) {
       value = 4;
       setState(() {});
+      Noti.showBigTextNatification(
+          title: 'Learn Appliaction',
+          body: 'Login Complate Sucess',
+          fln: flutterLocalNotificationsPlugin);
       GoRouter.of(context).push(AppRouter.kHomeView);
     } else if (state is SignInFailedCubitState) {
       title = 'Failed';

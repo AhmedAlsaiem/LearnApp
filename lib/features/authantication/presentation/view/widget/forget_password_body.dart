@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:i_learn/core/utils/constants.dart';
 import 'package:i_learn/features/authantication/presentation/manager/cubits/forget_password_cubit/forget_password_cubit.dart';
 import 'package:i_learn/features/authantication/presentation/manager/cubits/forget_password_cubit/forget_password_states.dart';
-import 'package:i_learn/features/authantication/presentation/manager/cubits/sign_in_cubit/sign_in_cubit_state.dart';
+import 'package:i_learn/features/authantication/presentation/manager/notifications/notifications.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/custom_botton.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/custom_text_form_field.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/handel_state_widget.dart';
@@ -28,6 +29,14 @@ class _ForgetPasswordBodyState extends State<ForgetPasswordBody> {
 
   String subTitle = '';
   String email = '';
+  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+      FlutterLocalNotificationsPlugin();
+  @override
+  void initState() {
+    Noti.notiInitialize(flutterLocalNotificationsPlugin);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocListener<ForgetPasswordCubit, ForgetPasswordState>(
@@ -96,12 +105,17 @@ class _ForgetPasswordBodyState extends State<ForgetPasswordBody> {
   void CustomListener(context, state) {
     if (state is ForgetPasswordIsLoadingState) {
       value = 1;
-//
+
       setState(() {});
     } else if (state is ForgetPasswordSucessState) {
       value = 2;
       title = 'Sucess';
       subTitle = state.sucessMessage;
+
+      Noti.showBigTextNatification(
+          title: 'Learn Appliaction',
+          body: 'Password Updating Sucess',
+          fln: flutterLocalNotificationsPlugin);
 
       setState(() {});
     } else if (state is ForgetPasswordFailedState) {
