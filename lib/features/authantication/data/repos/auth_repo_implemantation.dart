@@ -8,9 +8,11 @@ class AuthRepoImplemantation implements AuthRepo {
   Future<String> forgetPssword({required String email}) async {
     try {
       await auth.sendPasswordResetEmail(email: email);
-      return "Password reset email sent";
+      return 'Password reset email sent';
+    } on FirebaseAuthException catch (e) {
+      return AuthFailure.fromAuthException(e).errorMessage;
     } catch (e) {
-      return "Error sending password reset email: ${e.toString()}";
+      return "Error,Password not updated: ${e.toString()}";
     }
   }
 
@@ -18,18 +20,15 @@ class AuthRepoImplemantation implements AuthRepo {
   Future<String> signInEmailPassword(
       {required String email, required String password}) async {
     try {
-      if (auth.currentUser != null) {
-        if (auth.currentUser!.emailVerified) {
-          await auth.signInWithEmailAndPassword(
-            email: email,
-            password: password,
-          );
-          return 'sucess';
-        } else {
-          return 'Email is not verified';
-        }
+      await auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      if (FirebaseAuth.instance.currentUser != null &&
+          FirebaseAuth.instance.currentUser!.emailVerified) {
+        return 'success';
       } else {
-        return 'User not found';
+        return 'Verify your acount';
       }
     } on FirebaseAuthException catch (e) {
       return await AuthFailure.fromAuthException(e).errorMessage;

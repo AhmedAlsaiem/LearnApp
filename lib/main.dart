@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:i_learn/core/utils/appRouters.dart';
 import 'package:i_learn/core/utils/constants.dart';
+import 'package:i_learn/features/authantication/presentation/manager/cubits/forget_password_cubit/forget_password_cubit.dart';
 import 'package:i_learn/firebase_options.dart';
 
 import 'features/authantication/presentation/manager/cubits/sign_in_cubit/sign_in_cubit.dart';
@@ -23,9 +24,9 @@ class Learn extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: ((context) => SignIncubit())),
-                BlocProvider(create: ((context) => SignUpcubit())),
-
+        BlocProvider(create: ((context) => SignInCubit())),
+        BlocProvider(create: ((context) => SignUpcubit())),
+        BlocProvider(create: ((context) => ForgetPasswordCubit())),
       ],
       child: MaterialApp.router(
         theme: ThemeData(

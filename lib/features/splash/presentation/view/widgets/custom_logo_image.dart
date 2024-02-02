@@ -10,8 +10,8 @@ class customLogoImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        height: 250,
-        width: 270,
+        height: MediaQuery.of(context).size.height * 0.4,
+        width: MediaQuery.of(context).size.height * 0.6,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(

@@ -16,20 +16,17 @@ class AuthFailure extends Failure {
         return AuthFailure(
             errorMessage: "Email already used. Go to login page.");
 
-      case "ERROR_WRONG_PASSWORD":
-      case "wrong-password":
+      case 'wrong-password':
         return AuthFailure(errorMessage: "Wrong email/password combination.");
 
-      case "ERROR_USER_NOT_FOUND":
-      case "user-not-found":
+      case 'user-not-found':
         return AuthFailure(errorMessage: "Wrong email/password combination.");
 
-      case "ERROR_USER_DISABLED":
-      case "user-disabled":
+      case 'user-disabled':
         return AuthFailure(errorMessage: "Wrong email/password combination.");
 
-      case "ERROR_TOO_MANY_REQUESTS":
-      case "operation-not-allowed":
+      case 'ERROR_TOO_MANY_REQUESTS':
+      case 'operation-not-allowed':
         return AuthFailure(
             errorMessage: "Too many requests to log into this account.");
 
@@ -38,7 +35,7 @@ class AuthFailure extends Failure {
             errorMessage: "Server error, please try again later.");
 
       case "ERROR_INVALID_EMAIL":
-      case "invalid-email":
+      case 'invalid-email':
         return AuthFailure(
             errorMessage: "Server error, please try again later.");
 

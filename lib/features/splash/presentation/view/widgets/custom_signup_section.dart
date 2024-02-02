@@ -49,29 +49,15 @@ class CustomSignUpSection extends StatelessWidget {
           CustomButton(
             label: 'Sign Up',
             onPressed: () {
-              {
+              
                 if (formKey.currentState!.validate() == true) {
                   BlocProvider.of<SignUpcubit>(context)
                       .signUpWithEmailAndPassword(
                           email: email, password: password);
                   print('${password} + $email Ahmed');
                 }
-                // showDialog(
-                //     context: context,
-                //     builder: (context) {
-                //       return AlertDialog(
-                //         actions: [
-                //           TextButton(
-                //               onPressed: () {
-                //                 GoRouter.of(context).pop();
-                //               },
-                //               child: Text('ok'))
-                //         ],
-                //         title: Text('Ahmed'),
-                //         content: Text('threre'),
-                //       );
-                //     });
-              }
+
+              
             },
           ),
           SizedBox(height: PaddingManger.defultPadding),
