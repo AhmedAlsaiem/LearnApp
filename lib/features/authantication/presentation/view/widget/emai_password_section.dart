@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:i_learn/core/utils/appRouters.dart';
 import 'package:i_learn/core/utils/constants.dart';
 import 'package:i_learn/features/authantication/presentation/manager/cubits/sign_in_cubit/sign_in_cubit.dart';
-import 'package:i_learn/features/authantication/presentation/view/widget/custom_botton.dart';
+import 'package:i_learn/core/widgets/custom_botton.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/custom_text_form_field.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/navigation_from_authatication_signin_signup.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/sigin_Options.dart';

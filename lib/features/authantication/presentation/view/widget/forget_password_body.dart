@@ -5,7 +5,7 @@ import 'package:i_learn/core/utils/constants.dart';
 import 'package:i_learn/features/authantication/presentation/manager/cubits/forget_password_cubit/forget_password_cubit.dart';
 import 'package:i_learn/features/authantication/presentation/manager/cubits/forget_password_cubit/forget_password_states.dart';
 import 'package:i_learn/features/authantication/presentation/manager/notifications/notifications.dart';
-import 'package:i_learn/features/authantication/presentation/view/widget/custom_botton.dart';
+import 'package:i_learn/core/widgets/custom_botton.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/custom_text_form_field.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/handel_state_widget.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/logo_and_text_section.dart';

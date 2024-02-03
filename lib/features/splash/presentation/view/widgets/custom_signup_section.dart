@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:i_learn/core/utils/constants.dart';
 import 'package:i_learn/features/authantication/presentation/manager/cubits/sign_up_cubit/sign_up_cubit.dart';
-import 'package:i_learn/features/authantication/presentation/view/widget/custom_botton.dart';
+import 'package:i_learn/core/widgets/custom_botton.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/custom_text_form_field.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/navigation_from_authatication_signin_signup.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
