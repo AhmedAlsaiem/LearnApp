@@ -80,7 +80,7 @@ class _LoginViewBoodyState extends State<LoginViewBoody> {
           title: 'Learn Appliaction',
           body: 'Login Complate Sucess',
           fln: flutterLocalNotificationsPlugin);
-      GoRouter.of(context).push(AppRouter.kHomeView);
+      GoRouter.of(context).push(AppRouter.kSpecialtiesView);
     } else if (state is SignInFailedCubitState) {
       title = 'Failed';
       subTitle = state.errorMessage;

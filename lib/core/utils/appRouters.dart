@@ -5,6 +5,7 @@ import 'package:i_learn/features/authantication/presentation/view/login_view.dar
 import 'package:i_learn/features/authantication/presentation/view/sign_up_view.dart';
 import 'package:i_learn/features/home/presentation/views/home_view.dart';
 import 'package:i_learn/features/onbording/presentation/view/onbording_view.dart';
+import 'package:i_learn/features/specialties/presentation/view/specialties.dart';
 import 'package:i_learn/features/splash/presentation/view/splash_view.dart';
 
 abstract class AppRouter {
@@ -13,6 +14,7 @@ abstract class AppRouter {
   static String forgotPasswordView = '/frogotPasswordView';
   static String kSignUpView = '/signUpView';
   static String kHomeView = '/HomeView';
+  static String kSpecialtiesView = '/SpecialtiesView';
 
   static GoRouter router = GoRouter(
     routes: [
@@ -42,7 +44,13 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: '/HomeView',
-        builder: (BuildContext context, GoRouterState state) =>const HomeView(),
+        builder: (BuildContext context, GoRouterState state) =>
+            const HomeView(),
+      ),
+      GoRoute(
+        path: '/SpecialtiesView',
+        builder: (BuildContext context, GoRouterState state) =>
+            const SpecialtiesView(),
       ),
     ],
   );

@@ -14,7 +14,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp( Learn());
+  runApp(Learn());
 }
 
 class Learn extends StatelessWidget {
@@ -29,6 +29,7 @@ class Learn extends StatelessWidget {
         BlocProvider(create: ((context) => ForgetPasswordCubit())),
       ],
       child: MaterialApp.router(
+        // locale: Locale('ar'),
         theme: ThemeData(
           scaffoldBackgroundColor: ColorsManger.kWhiteColor,
         ),
