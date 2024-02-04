@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:i_learn/core/utils/appRouters.dart';
 import 'package:i_learn/core/utils/constants.dart';
 import 'package:i_learn/core/utils/styles.dart';
+import 'package:i_learn/core/widgets/custom_botton.dart';
 import 'package:i_learn/features/specialties/presentation/view/widgets/row_five.dart';
 import 'package:i_learn/features/specialties/presentation/view/widgets/row_four.dart';
 import 'package:i_learn/features/specialties/presentation/view/widgets/row_one.dart';
@@ -48,6 +51,13 @@ class SpecialtiesViewBody extends StatelessWidget {
                 RowSix(),
                 SizedBox(height: PaddingManger.defultPadding),
               ],
+            ),
+            SizedBox(height: PaddingManger.defultPadding * 4),
+            CustomButton(
+              label: 'Start now',
+              onPressed: () {
+                GoRouter.of(context).push(AppRouter.kHomeView);
+              },
             )
           ],
         ),
@@ -55,4 +65,3 @@ class SpecialtiesViewBody extends StatelessWidget {
     );
   }
 }
-

@@ -21,6 +21,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      cursorColor: ColorsManger.kPrimaryColor,
       onChanged: widget.onchange,
       obscureText:
           obscureTextMethod(), // widget.label == 'Password' ? visible : false,
