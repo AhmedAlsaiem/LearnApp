@@ -8,6 +8,7 @@ class ColorsManger {
 }
 
 class AssetsManger {
+  static final String myFriends = 'assets/images/friends.jpg';
   static final String logoImage = 'assets/images/logo.png';
   static final String OnbordingImage1 = 'assets/images/onbording_1.png';
   static final String OnbordingImage2 = 'assets/images/onbording_2.png';
