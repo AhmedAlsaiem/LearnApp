@@ -13,8 +13,8 @@ class SplashViewbody extends StatefulWidget {
 class _SplashViewbodyState extends State<SplashViewbody> {
   void initState() {
     super.initState();
-    Future.delayed( Duration(seconds: 3), () {
-      GoRouter.of(context).push(AppRouter.kOnbordingView);
+    Future.delayed(Duration(seconds: 3), () {
+      GoRouter.of(context).push(AppRouter.kHomeView);
     });
   }
 
@@ -22,7 +22,7 @@ class _SplashViewbodyState extends State<SplashViewbody> {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [ customLogoImage()],
+      children: [customLogoImage()],
     );
   }
 }
