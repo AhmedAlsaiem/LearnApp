@@ -29,6 +29,7 @@ class Learn extends StatelessWidget {
         BlocProvider(create: ((context) => ForgetPasswordCubit())),
       ],
       child: MaterialApp.router(
+      
         // locale: Locale('ar'),
         theme: ThemeData(
           scaffoldBackgroundColor: ColorsManger.kWhiteColor,

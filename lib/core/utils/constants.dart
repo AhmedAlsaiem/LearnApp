@@ -5,6 +5,7 @@ class ColorsManger {
   static final Color kScendryColor = Colors.black;
   static final Color kGreyColor = Colors.grey;
   static final Color kWhiteColor = Colors.white;
+  static final Color korangeAccent = Colors.orangeAccent;
 }
 
 class AssetsManger {

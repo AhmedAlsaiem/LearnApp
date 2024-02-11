@@ -1,48 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:i_learn/core/utils/constants.dart';
-import 'package:i_learn/features/home/presentation/views/widget/custom_person_name_image.dart';
+import 'package:i_learn/features/home/presentation/views/widget/best_course_section.dart';
+import 'package:i_learn/features/home/presentation/views/widget/custom_category_list_view.dart';
 import 'package:i_learn/features/home/presentation/views/widget/custom_search_section.dart';
+
+import 'category_course_item_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CustomSearchSection(),
-      ],
-    );
-  }
-}
-
-class CustomSearchSection extends StatelessWidget {
-  const CustomSearchSection({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.32,
-      decoration: CustomBoxDecoration(),
-      child: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.all(PaddingManger.defultPadding),
-          child: Column(
-            children: [
-              SizedBox(height: PaddingManger.defultPadding * 0.5),
-              personNameAndImage(),
-              SizedBox(height: PaddingManger.defultPadding * 2),
-              CustomSearchTextFormField()
-            ],
-          ),
-        ),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          CustomSearchSection(),
+          SizedBox(height: PaddingManger.defultPadding),
+          Padding(
+            padding: EdgeInsets.only(left: PaddingManger.defultPadding),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomCategoryListView(),
+                SizedBox(height: PaddingManger.defultPadding),
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      CategoryCourseItemListView(),
+                      SizedBox(height: PaddingManger.defultPadding),
+                      BestCourseSection()
+                    ],
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
 }
+
 
 BoxDecoration CustomBoxDecoration() {
   return BoxDecoration(
