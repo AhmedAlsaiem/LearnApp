@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:i_learn/core/utils/constants.dart';
 import 'package:i_learn/core/utils/styles.dart';
-import 'package:i_learn/features/home/presentation/views/widget/custom_past_course_item.dart';
+import 'package:i_learn/features/home/presentation/views/widget/best_course_list_view.dart';
 
 class BestCourseSection extends StatelessWidget {
   const BestCourseSection({
@@ -30,14 +30,7 @@ class BestCourseSection extends StatelessWidget {
               ),
             ],
           ),
-          ListView.builder(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: 10,
-            itemBuilder: ((context, index) {
-              return CustomBestCourseItem();
-            }),
-          ),
+          BestCoursesListView(),
         ],
       ),
     );

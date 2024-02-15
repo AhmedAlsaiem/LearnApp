@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:i_learn/core/utils/constants.dart';
 import 'package:i_learn/core/utils/styles.dart';
@@ -14,7 +12,7 @@ class personNameAndImage extends StatelessWidget {
     return Row(
       children: [
         CircleAvatar(
-          radius: 35,
+          radius: MediaQuery.of(context).size.width * 0.08,
           backgroundImage: AssetImage(AssetsManger.myFriends),
         ),
         SizedBox(width: 15),

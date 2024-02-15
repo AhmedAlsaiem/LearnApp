@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:i_learn/core/utils/constants.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/custom_cliper.dart';
-import 'package:i_learn/features/splash/presentation/view/widgets/custom_logo_image.dart';
 
 class CustomLogoContiner extends StatelessWidget {
-  const CustomLogoContiner({
-    super.key,
-  });
-
+  const CustomLogoContiner(
+      {super.key, required this.child, required this.height});
+  final Widget child;
+  final double height;
   @override
   Widget build(BuildContext context) {
     return ClipPath(
@@ -20,9 +19,9 @@ class CustomLogoContiner extends StatelessWidget {
             bottomRight: Radius.elliptical(30, 20),
           ),
         ),
-        height: MediaQuery.of(context).size.height * 0.35,
+        height: height,
         width: double.infinity,
-        child: customLogoImage(),
+        child: Center(child: child),
       ),
     );
   }

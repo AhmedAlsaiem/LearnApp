@@ -4,7 +4,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:go_router/go_router.dart';
 import 'package:i_learn/core/utils/appRouters.dart';
 import 'package:i_learn/features/authantication/presentation/manager/cubits/sign_in_cubit/sign_in_cubit.dart';
-import 'package:i_learn/features/authantication/presentation/manager/cubits/sign_in_cubit/sign_in_cubit_state.dart';
+import 'package:i_learn/features/authantication/presentation/manager/cubits/sign_in_cubit/sign_in_state.dart';
 import 'package:i_learn/features/authantication/presentation/manager/notifications/notifications.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/emai_password_section.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/handel_state_widget.dart';

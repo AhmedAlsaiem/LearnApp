@@ -43,7 +43,7 @@ class _CategoryContinerState extends State<CategoryContiner> {
           ),
           child: Center(
               child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Text(
               widget.label,
               style: TextStyleManger.textStyleAleoRegular24.copyWith(

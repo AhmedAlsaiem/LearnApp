@@ -17,7 +17,6 @@ class _HomeViewState extends State<HomeView> {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-      
         body: homeController(index: currentIndex),
         bottomNavigationBar: BottomNavigationBar(
             onTap: (value) {

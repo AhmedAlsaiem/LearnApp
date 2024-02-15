@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:i_learn/features/authantication/presentation/manager/cubits/sign_up_cubit/sign_up_cubit.dart';
-import 'package:i_learn/features/authantication/presentation/manager/cubits/sign_up_cubit/sign_up_cubit_state.dart';
+import 'package:i_learn/features/authantication/presentation/manager/cubits/sign_up_cubit/sign_up_state.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/handel_state_widget.dart';
 import 'package:i_learn/features/authantication/presentation/view/widget/logo_and_text_section.dart';
 import 'package:i_learn/features/splash/presentation/view/widgets/custom_signup_section.dart';

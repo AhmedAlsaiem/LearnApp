@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:i_learn/features/authantication/data/repos/auth_repo_implemantation.dart';
-import 'package:i_learn/features/authantication/presentation/manager/cubits/sign_in_cubit/sign_in_cubit_state.dart';
+import 'package:i_learn/features/authantication/presentation/manager/cubits/sign_in_cubit/sign_in_state.dart';
 
 class SignInCubit extends Cubit<SignInCubitState> {
   SignInCubit() : super(SignInCubitState());

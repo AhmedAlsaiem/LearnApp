@@ -28,3 +28,4 @@ class FontManger {
 class PaddingManger {
   static final double defultPadding = 20.0;
 }
+
