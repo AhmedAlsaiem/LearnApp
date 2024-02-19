@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:i_learn/core/utils/constants.dart';
 import 'package:i_learn/core/utils/styles.dart';
@@ -18,7 +17,7 @@ class CustomBestCourseItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           color: ColorsManger.kGreyColor.withOpacity(0.1),
         ),
-        height: MediaQuery.of(context).size.height * 0.12,
+        height: MediaQuery.of(context).size.height * 0.13,
         width: double.infinity,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,

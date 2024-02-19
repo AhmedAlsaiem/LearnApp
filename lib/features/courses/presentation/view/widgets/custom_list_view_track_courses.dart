@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:i_learn/core/utils/constants.dart';
-import 'package:i_learn/features/home/presentation/views/widget/custom_past_course_item.dart';
+import 'package:i_learn/features/courses/presentation/view/widgets/custom_track_courses_item.dart';
 
-class BestCoursesListView extends StatelessWidget {
-  const BestCoursesListView({
+class CustomListViewTrackCourse extends StatelessWidget {
+  const CustomListViewTrackCourse({
     super.key,
   });
 
@@ -15,7 +15,7 @@ class BestCoursesListView extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       itemCount: 10,
       itemBuilder: ((context, index) {
-        return CustomBestCourseItem();
+        return CustomTrackCoursesItem();
       }),
     );
   }
