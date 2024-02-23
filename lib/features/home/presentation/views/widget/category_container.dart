@@ -51,7 +51,7 @@ class _CategoryContinerState extends State<CategoryContiner> {
                 fontSize: 18,
                 color: index == 2
                     ? ColorsManger.kWhiteColor
-                    : ColorsManger.kScendryColor.withOpacity(0.6),
+                    : ColorsManger.kScendryColor.withOpacity(0.7),
               ),
             ),
           )),

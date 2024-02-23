@@ -31,6 +31,7 @@ class Learn extends StatelessWidget {
       child: MaterialApp.router(
         // locale: Locale('ar'),
         theme: ThemeData(
+       //   tabBarTheme: TabBarTheme(),
           scaffoldBackgroundColor: ColorsManger.kWhiteColor,
         ),
         routerConfig: AppRouter.router,

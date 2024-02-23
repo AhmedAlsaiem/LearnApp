@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:i_learn/core/utils/constants.dart';
 
@@ -21,6 +20,7 @@ class AnimatedLinearProgressIndicator extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16),
                 color: ColorsManger.kPrimaryColor,
                 value: value,
+                backgroundColor: ColorsManger.kGreyColor.withOpacity(0.2),
               ));
         });
   }

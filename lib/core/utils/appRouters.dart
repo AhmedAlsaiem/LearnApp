@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:i_learn/features/authantication/presentation/view/forgot_password_view.dart';
 import 'package:i_learn/features/authantication/presentation/view/login_view.dart';
 import 'package:i_learn/features/authantication/presentation/view/sign_up_view.dart';
+import 'package:i_learn/features/course_sections/presentation/view/course_sections_view.dart';
 import 'package:i_learn/features/courses/presentation/view/suggestion_courses_view.dart';
 import 'package:i_learn/features/home/presentation/views/home_view.dart';
 import 'package:i_learn/features/onbording/presentation/view/onbording_view.dart';
@@ -19,7 +20,7 @@ abstract class AppRouter {
   static String kSpecialtiesView = '/SpecialtiesView';
   static String KTrackCoursesView = '/TrackCoursesView';
   static String kSuggestionCoursesView = '/SuggestionCoursesView';
-
+  static String kCourseSectionsView = '/CourseSectionsView';
   static GoRouter router = GoRouter(
     routes: [
       GoRoute(
@@ -65,6 +66,11 @@ abstract class AppRouter {
         path: '/SuggestionCoursesView',
         builder: (BuildContext context, GoRouterState state) =>
             const SuggestionCoursesView(),
+      ),
+      GoRoute(
+        path: '/CourseSectionsView',
+        builder: (BuildContext context, GoRouterState state) =>
+            const CourseSectionsView(),
       ),
     ],
   );

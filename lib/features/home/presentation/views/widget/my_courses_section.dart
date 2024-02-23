@@ -22,7 +22,10 @@ class MyCoursesSection extends StatelessWidget {
           SizedBox(
             height: PaddingManger.defultPadding,
           ),
-          CustomTabBar(tabController: _tabController),
+          CustomTabBar(
+            tabController: _tabController,
+            labelList: labelList,
+          ),
           SizedBox(height: PaddingManger.defultPadding),
           CustomTabBarCategory(tabController: _tabController)
         ],
@@ -30,3 +33,9 @@ class MyCoursesSection extends StatelessWidget {
     );
   }
 }
+
+List<String> labelList = [
+  'all',
+  'inprogress',
+  'complated',
+];

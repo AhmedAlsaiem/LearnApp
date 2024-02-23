@@ -2,34 +2,51 @@ import 'package:flutter/material.dart';
 import 'package:i_learn/core/utils/constants.dart';
 import 'package:i_learn/features/home/presentation/views/widget/custom_tab.dart';
 
-class CustomTabBar extends StatelessWidget {
+class CustomTabBar extends StatefulWidget {
   const CustomTabBar({
     super.key,
     required TabController tabController,
+    required this.labelList,
   }) : _tabController = tabController;
 
   final TabController _tabController;
+  final List<String> labelList;
+  @override
+  State<CustomTabBar> createState() => _CustomTabBarState();
+}
+
+class _CustomTabBarState extends State<CustomTabBar> {
+  int val = 0;
 
   @override
   Widget build(BuildContext context) {
     return TabBar(
+      onTap: (vlaue) {
+        val = vlaue;
+        setState(() {});
+      },
+
+      unselectedLabelColor: ColorsManger.kScendryColor,
       physics: BouncingScrollPhysics(),
+      //isScrollable: true,
+      overlayColor: MaterialStatePropertyAll(Colors.white),
       splashFactory: InkSparkle.constantTurbulenceSeedSplashFactory,
       splashBorderRadius: BorderRadius.all(Radius.zero),
       tabAlignment: TabAlignment.center,
-      indicatorPadding: EdgeInsets.all(0),
       dividerColor: ColorsManger.kWhiteColor,
       indicator: BoxDecoration(
-          shape: BoxShape.rectangle,
           color: ColorsManger.kPrimaryColor,
+          shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(10)),
-      indicatorColor: Colors.white,
       labelColor: ColorsManger.kWhiteColor,
-      controller: _tabController,
+      controller: widget._tabController,
       tabs: [
-        CustomTab(label: ' all '),
-        CustomTab(label: 'inprogress'),
-        CustomTab(label: 'complated'),
+        for (int i = 0; i < widget.labelList.length; i++)
+          CustomTab(
+            label: widget.labelList[i],
+            index1: i,
+            index2: val,
+          ),
       ],
     );
   }

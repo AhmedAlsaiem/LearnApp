@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:i_learn/core/utils/constants.dart';
 import 'package:i_learn/features/courses/presentation/view/widgets/custom_course_item_continter.dart';
-import 'package:i_learn/features/home/presentation/views/widget/best_course_list_view.dart';
+import 'package:i_learn/features/home/presentation/views/widget/my_course_item_list_view.dart';
 
 class SuggestionCoursesView extends StatelessWidget {
   const SuggestionCoursesView({super.key});
@@ -27,8 +27,11 @@ class SuggestionCoursesViewBody extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.66,
-                  child: SingleChildScrollView(child: BestCoursesListView()))
+                height: MediaQuery.of(context).size.height * 0.66,
+                child: SingleChildScrollView(
+                  child: MyCourseItemListView(),
+                ),
+              )
             ],
           ),
         ),

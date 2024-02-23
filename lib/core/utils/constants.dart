@@ -6,6 +6,7 @@ class ColorsManger {
   static final Color kGreyColor = Colors.grey;
   static final Color kWhiteColor = Colors.white;
   static final Color korangeAccent = Colors.orangeAccent;
+  static final Color kgreenAccent = Color(0xff44aa98);
 }
 
 class AssetsManger {
@@ -28,4 +29,3 @@ class FontManger {
 class PaddingManger {
   static final double defultPadding = 20.0;
 }
-

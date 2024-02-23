@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:i_learn/core/utils/constants.dart';
 import 'package:i_learn/core/utils/styles.dart';
-import 'package:i_learn/features/authantication/presentation/view/widget/custom_logo_continer.dart';
+import 'package:i_learn/core/widgets/custom_logo_continer.dart';
 import 'package:i_learn/features/splash/presentation/view/widgets/custom_logo_image.dart';
 
 class LogoAndTextSection extends StatelessWidget {

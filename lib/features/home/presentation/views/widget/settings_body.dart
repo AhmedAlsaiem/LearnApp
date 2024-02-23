@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:i_learn/core/utils/constants.dart';
 import 'package:i_learn/core/utils/styles.dart';
 import 'package:i_learn/features/home/presentation/views/widget/custom_list_tile.dart';
-import '../../../../authantication/presentation/view/widget/custom_logo_continer.dart';
+import '../../../../../core/widgets/custom_logo_continer.dart';
 
 class SettingsViewBody extends StatelessWidget {
   const SettingsViewBody({super.key});
